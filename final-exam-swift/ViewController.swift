@@ -109,9 +109,10 @@ extension ViewController: UISearchBarDelegate {
 //                print(blocksResponse)
                 
                 let json = (try! JSONSerialization.jsonObject(with: data)) as! [Any]
-//                print(json[0])
-                let json2 = json as? [String: Any]
-                    print(json2)
+                print(json)
+//                for json2 in json {
+//                    print(json2)
+//                }
                 
 //
                 
