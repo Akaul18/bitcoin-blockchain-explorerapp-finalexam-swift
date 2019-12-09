@@ -10,8 +10,8 @@ import Foundation
 
 struct Blocks: Decodable {
     var height: Int!
-//    var timestamp: TimeInterval?
-//    var tx_count: String?
+    var timestamp: TimeInterval?
+    var tx_count: String?
     var size: Int!
     var weight: Int!
 }
