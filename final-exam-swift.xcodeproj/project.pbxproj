@@ -15,6 +15,7 @@
 		92ECC6C6239BB3BA00726FA3 /* blockStreamAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ECC6C5239BB3BA00726FA3 /* blockStreamAPI.swift */; };
 		92ECC6C9239BB89F00726FA3 /* blockStreamService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ECC6C8239BB89F00726FA3 /* blockStreamService.swift */; };
 		92ECC6CB239BBB9E00726FA3 /* Blocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ECC6CA239BBB9E00726FA3 /* Blocks.swift */; };
+		92FB7EF923A31E2600B0AF95 /* SearchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FB7EF823A31E2600B0AF95 /* SearchDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		92ECC6C5239BB3BA00726FA3 /* blockStreamAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blockStreamAPI.swift; sourceTree = "<group>"; };
 		92ECC6C8239BB89F00726FA3 /* blockStreamService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blockStreamService.swift; sourceTree = "<group>"; };
 		92ECC6CA239BBB9E00726FA3 /* Blocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blocks.swift; sourceTree = "<group>"; };
+		92FB7EF823A31E2600B0AF95 /* SearchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				92ECC6BC239B9D7B00726FA3 /* LaunchScreen.storyboard */,
 				92ECC6BF239B9D7B00726FA3 /* Info.plist */,
 				92ECC6CA239BBB9E00726FA3 /* Blocks.swift */,
+				92FB7EF823A31E2600B0AF95 /* SearchDetailViewController.swift */,
 			);
 			path = "final-exam-swift";
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 				92ECC6C6239BB3BA00726FA3 /* blockStreamAPI.swift in Sources */,
 				92ECC6CB239BBB9E00726FA3 /* Blocks.swift in Sources */,
 				92ECC6B4239B9D7600726FA3 /* AppDelegate.swift in Sources */,
+				92FB7EF923A31E2600B0AF95 /* SearchDetailViewController.swift in Sources */,
 				92ECC6C9239BB89F00726FA3 /* blockStreamService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -30,6 +30,7 @@ class ViewController: UIViewController {
     var count = 0
     var count2 = 0
     var countQuery = 0
+    let searchDetailController = SearchDetailViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,9 +45,16 @@ class ViewController: UIViewController {
 //        self.activityIndicator.isHidden = !self.isSearching
 //        self.tableView.isEditing = self.isSearching
 
+        
         // Do any additional setup after loading the view.
     }
+    override func viewWillAppear(_ animated: Bool) {
+                navigationItem.title = "One"
+            }
     
+    
+    
+//
     func updateView() {
         DispatchQueue.main.async { [weak self] in
             guard let strongSelf = self else { return }
@@ -140,6 +148,7 @@ class ViewController: UIViewController {
                 self.blockStreamService?.delegate?.requestFailed(with: .requestFailed)
             }
         }
+        
     }
 }
 
@@ -206,7 +215,14 @@ extension ViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let query = searchBar.text else { return }
         updateView()
-        makeRequest(query: query)
-    }}
+//        makeRequest(query: query)
+        performSegue(withIdentifier: "SearchDetail", sender: self)
+        searchDetailController.selectedQuery = "\(query)"
+        navigationController?.pushViewController(searchDetailController, animated: true)
+
+    }
+    
+}
+
 
 
