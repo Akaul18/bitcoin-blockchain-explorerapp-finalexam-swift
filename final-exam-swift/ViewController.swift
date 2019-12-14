@@ -11,9 +11,11 @@ import UIKit
 class ViewController: UIViewController {
 
     
+    @IBOutlet weak var viewAllBlocks: UIButton!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
+    var query: String?
     private var client = APIClient()
     private var block: Blocks?
     private var blockArr = [Any]()
@@ -30,7 +32,7 @@ class ViewController: UIViewController {
     var count = 0
     var count2 = 0
     var countQuery = 0
-    let searchDetailController = SearchDetailViewController()
+//    let searchDetailController = SearchDetailViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +43,9 @@ class ViewController: UIViewController {
         activityIndicator.center = CGPoint(x: view.bounds.size.width / 2, y: view.bounds.size.height / 2)
         view.addSubview(activityIndicator)
         makeRequest(query: "")
+        self.count2=0
+        viewAllBlocks.isHidden = true
+//        viewAllBlocks.addTarget(self, action: Selector("makeRequest(query: '')"), for: .touchUpInside)
         
 //        self.activityIndicator.isHidden = !self.isSearching
 //        self.tableView.isEditing = self.isSearching
@@ -48,8 +53,13 @@ class ViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func viewAllBlocksTapped(_ sender: Any) {
+        makeRequest(query: "")
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
-                navigationItem.title = "One"
+                navigationItem.title = "Search Blocks"
             }
     
     
@@ -65,6 +75,10 @@ class ViewController: UIViewController {
         }
 //        isSearching = !isSearching
 
+    }
+    
+    @IBAction func viewAllBlocksTapped() {
+        
     }
     
     
@@ -111,6 +125,7 @@ class ViewController: UIViewController {
         }
         count2 = 1
         updateView()
+        self.viewAllBlocks.isHidden=true
     }
     
     func makeRequest(query: String){
@@ -214,11 +229,16 @@ extension ViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let query = searchBar.text else { return }
+//        setquery(query: query)
+//        print(getquery())
+        viewAllBlocks.isHidden = false
+//        viewAllBlocks.target(forAction: makeRequest(query: ""), withSender: viewAllBlocks)
+        self.count2=0
         updateView()
-//        makeRequest(query: query)
-        performSegue(withIdentifier: "SearchDetail", sender: self)
-        searchDetailController.selectedQuery = "\(query)"
-        navigationController?.pushViewController(searchDetailController, animated: true)
+        makeRequest(query: query)
+//        searchDetailController.selectedQuery = "\(query)"
+//        performSegue(withIdentifier: "SearchDetail", sender: self)
+//        navigationController?.pushViewController(searchDetailController, animated: true)
 
     }
     

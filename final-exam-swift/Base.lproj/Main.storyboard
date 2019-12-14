@@ -19,12 +19,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="7kb-FF-xxK">
-                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nFL-8a-kEQ">
-                                <rect key="frame" x="0.0" y="144" width="414" height="752"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nFL-8a-kEQ">
+                                <rect key="frame" x="0.0" y="100" width="414" height="724"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QVE-Xk-6AH">
+                                    <rect key="frame" x="0.0" y="72" width="414" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="View all Blocks"/>
+                                    <connections>
+                                        <action selector="viewAllBlocksTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W4N-Bw-EOi"/>
+                                    </connections>
+                                </button>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BlockCell" textLabel="wpn-pS-ZT8" detailTextLabel="I04-9C-eAw" style="IBUITableViewCellStyleValue1" id="IXG-fh-u6v" userLabel="BlockCell">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
@@ -74,68 +82,12 @@
                     <connections>
                         <outlet property="searchBar" destination="7kb-FF-xxK" id="B8T-90-n5U"/>
                         <outlet property="tableView" destination="nFL-8a-kEQ" id="L95-Yg-TV5"/>
-                        <segue destination="nmv-pX-Kbi" kind="show" identifier="SearchDetail" id="Zuz-0K-NMA"/>
+                        <outlet property="viewAllBlocks" destination="QVE-Xk-6AH" id="D5W-Yk-BLa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="132.58928571428572"/>
-        </scene>
-        <!--Search Detail View Controller-->
-        <scene sceneID="h71-E3-66H">
-            <objects>
-                <viewController id="nmv-pX-Kbi" customClass="SearchDetailViewController" customModule="final_exam_swift" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="d9e-Lu-BqV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KVY-RG-3TF">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableCell2" textLabel="XXS-Qm-c4d" detailTextLabel="SRu-iL-yFt" style="IBUITableViewCellStyleValue1" id="HZI-v9-Rjc" userLabel="tableCell2">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HZI-v9-Rjc" id="mzk-iP-s9S">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XXS-Qm-c4d">
-                                                    <rect key="frame" x="20" y="12" width="33.5" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SRu-iL-yFt">
-                                                    <rect key="frame" x="350" y="12" width="44" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="KVY-RG-3TF" secondAttribute="bottom" id="6Gu-Cu-7XY"/>
-                            <constraint firstItem="KVY-RG-3TF" firstAttribute="trailing" secondItem="Ekm-Zy-5sV" secondAttribute="trailing" id="83u-tR-6lB"/>
-                            <constraint firstItem="KVY-RG-3TF" firstAttribute="leading" secondItem="Ekm-Zy-5sV" secondAttribute="leading" id="OlX-M3-uXx"/>
-                            <constraint firstItem="KVY-RG-3TF" firstAttribute="top" secondItem="Ekm-Zy-5sV" secondAttribute="top" id="SjN-Xe-RgS"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="Ekm-Zy-5sV"/>
-                    </view>
-                    <connections>
-                        <outlet property="tableView2" destination="KVY-RG-3TF" id="aJi-F6-77g"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1ty-5n-j0s" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1860.8695652173915" y="132.58928571428572"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LjB-NP-Ge9">
@@ -149,7 +101,7 @@
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="9Sb-41-ZpN"/>
-                        <segue destination="nmv-pX-Kbi" kind="show" id="Fem-kV-Bdz"/>
+                        <segue destination="BYZ-38-t0r" kind="show" id="iWP-ea-2rM"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rDd-xW-VVc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -158,6 +110,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Fem-kV-Bdz"/>
+        <segue reference="iWP-ea-2rM"/>
     </inferredMetricsTieBreakers>
 </document>
